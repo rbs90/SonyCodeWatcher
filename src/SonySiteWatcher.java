@@ -72,7 +72,7 @@ public class SonySiteWatcher extends TimerTask{
             public void run() {
                 try {
                     Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream("/sounds/" + url));
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResource("/sounds/" + url));
                     clip.open(inputStream);
                     clip.start();
                 } catch (Exception e) {
