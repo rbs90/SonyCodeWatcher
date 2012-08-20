@@ -23,12 +23,10 @@ import java.util.regex.Pattern;
 public class SonySiteWatcher extends TimerTask{
 
     ArrayList<String> codes = new ArrayList<String>();
-    private String site;
     private final URL url;
     private final Pattern pattern;
 
     public SonySiteWatcher(String site) throws MalformedURLException {
-        this.site = site;
         url = new URL(site);
         pattern = Pattern.compile("003e(\\w{4}-\\w{4}-\\w{4})");
     }
@@ -36,6 +34,7 @@ public class SonySiteWatcher extends TimerTask{
     @Override
     public void run() {
 
+        System.out.println("Searching for updates...");
         System.out.println("Searching for updates...");
         try {
             URLConnection urlConnection = url.openConnection();
@@ -56,9 +55,7 @@ public class SonySiteWatcher extends TimerTask{
                 }
             }
 
-
-
-
+            inputStream.close();
 
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

@@ -14,6 +14,6 @@ public class Main {
         SonySiteWatcher watcher = new SonySiteWatcher("https://plus.google.com/u/0/113540013167694689284/posts");
 
         Timer timer = new Timer();
-        timer.schedule(watcher, 0, 20000);
+        timer.schedule(watcher, 0, Integer.parseInt(args[0]) * 1000);
     }
 }
