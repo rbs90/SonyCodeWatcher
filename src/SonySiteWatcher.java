@@ -35,7 +35,6 @@ public class SonySiteWatcher extends TimerTask{
     public void run() {
 
         System.out.println("Searching for updates...");
-        System.out.println("Searching for updates...");
         try {
             URLConnection urlConnection = url.openConnection();
             InputStream inputStream = urlConnection.getInputStream();
